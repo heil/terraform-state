@@ -5,7 +5,7 @@ resource "aws_vpc" "kurs05-vk" {
   tags = {
     Name        = "kurs05-vk"
     Description = "Example public private VPC"
-    Environment = "day-02"
+    Environment = "day-03"
   }
 }
 
@@ -26,7 +26,7 @@ resource "aws_subnet" "kurs05-vk-subnet-01" {
   tags = {
     Name        = "kurs05-vk-subnet-01"
     Description = "Public subnet-01 for kurs05-vk VPC"
-    Environment = "day-02"
+    Environment = "day-03"
   }
 }
 
@@ -41,7 +41,7 @@ resource "aws_route_table" "kurs05-vk" {
   tags = {
     Name        = "kurs05-vk"
     Description = "Route Table for public subnet kurs05-vk-subnet-01"
-    Environment = "day-02"
+    Environment = "day-03"
   }
 }
 
@@ -65,7 +65,7 @@ resource "aws_subnet" "kurs05-vk-subnet-02" {
   tags = {
     Name        = "kurs05-vk-subnet-02"
     Description = "Private Subnet kurs05-vk-subnet-02 for VPC kurs05-vk"
-    Environment = "day-02"
+    Environment = "day-03"
   }
 }
 
@@ -80,7 +80,7 @@ resource "aws_route_table" "kurs05-vk-subnet-02" {
   tags = {
     Name        = "Private Subnet"
     Description = "Route Table for private subnet kurs05-vk-subnet-02"
-    Environment = "day-02"
+    Environment = "day-03"
   }
 }
 
@@ -99,7 +99,7 @@ resource "aws_subnet" "kurs05-vk-subnet-03" {
   tags = {
     Name        = "kurs05-vk-subnet-03"
     Description = "Private Subnet kurs05-vk-subnet-03 for VPC kurs05-vk"
-    Environment = "day-02"
+    Environment = "day-03"
   }
 }
 
@@ -114,7 +114,7 @@ resource "aws_route_table" "kurs05-vk-subnet-03" {
   tags = {
     Name        = "Private Subnet"
     Description = "Route Table for private subnet kurs05-vk-subnet-03"
-    Environment = "day-02"
+    Environment = "day-03"
   }
 }
 
