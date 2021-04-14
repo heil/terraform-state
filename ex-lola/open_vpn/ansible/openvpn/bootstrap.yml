@@ -1,0 +1,23 @@
+- hosts: all
+  remote_user: ubuntu
+  gather_facts: False
+
+  tasks:
+  - name: Wait 300 seconds for port 22 to become open and contain "OpenSSH"
+    wait_for:
+      port: 22
+      host: '{{ (ansible_ssh_host|default(ansible_host))|default(inventory_hostname) }}'
+      search_regex: OpenSSH
+      delay: 10
+    connection: local
+  - name: Check for Ansible
+    raw: test -e /usr/bin/ansible
+    changed_when: false
+    failed_when: false
+    register: check_ansible
+    become: yes
+
+  - name: Install Ansible
+    raw: apt -y update && apt install -y ansible
+    when: check_ansible != 0
+    become: yes

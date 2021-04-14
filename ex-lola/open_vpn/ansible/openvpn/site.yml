@@ -1,0 +1,8 @@
+---
+- import_playbook: bootstrap.yml
+
+- hosts: openvpn
+  become: yes
+  gather_facts: yes
+  roles:
+    - openvpn
