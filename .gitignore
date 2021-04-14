@@ -3,3 +3,6 @@
 
 # .tfvars files
 /terraform.tfvars
+
+#locks
+.terraform.lock.hcl
