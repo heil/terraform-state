@@ -1,5 +1,5 @@
 variable "public_subnets" {
-  type = map
+  type = map(any)
   default = {
     training = [
       "10.0.0.0/22"
@@ -13,7 +13,7 @@ variable "public_subnets" {
 }
 
 variable "private_subnets" {
-  type = map
+  type = map(any)
   default = {
     training = [
       "10.0.12.0/22"
@@ -27,7 +27,8 @@ variable "private_subnets" {
 }
 
 variable "aws_profile" {
-
+  type    = string
+  default = "terraform-training"
 }
 
 variable "aws_region" {
@@ -36,12 +37,12 @@ variable "aws_region" {
 
 variable "availability_zones" {
   description = "List of AZs in which to distribute subnets."
-  type        = "list"
+  type        = list(string)
   default     = ["eu-central-1a", "eu-central-1b", "eu-central-1c"]
 }
 
 variable "cidr_block" {
-  type = map
+  type = map(any)
   default = {
     training = "10.0.0.0/19"
     ops      = "10.0.32.0/19"
@@ -67,4 +68,10 @@ variable "stage" {
   type        = string
   default     = ""
   description = "Stage for the VPC label, e.g. 'prod', 'staging', 'dev'"
+}
+
+variable "tennant" {
+  type        = string
+  default     = "default"
+  description = "Tennant for the VPC label, e.g. 'prod', 'staging', 'dev'"
 }
