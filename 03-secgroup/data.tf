@@ -2,9 +2,14 @@ data "aws_route53_zone" "terraform-training-de" {
   name = "terraform-training.de."
 }
 
-data "aws_vpc" "kurs05-vk" {
+data "aws_route53_zone" "terraform-training-org" {
+  name = "terraform-training.org."
+}
+
+
+data "aws_vpc" "my_vpc" {
   filter {
     name   = "tag:Name"
-    values = ["kurs05-vk"]
+    values = ["*${terraform.workspace}*"]
   }
 }

@@ -1,7 +1,7 @@
 variable "public_subnets" {
   type = map(any)
   default = {
-    training = [
+    production = [
       "10.1.0.0/22",
       "10.1.4.0/22"
     ]
@@ -20,7 +20,7 @@ variable "public_subnets" {
 variable "private_subnets" {
   type = map(any)
   default = {
-    training = [
+    production = [
       "10.1.8.0/22",
       "10.1.12.0/22"
     ]
@@ -53,9 +53,9 @@ variable "availability_zones" {
 variable "cidr_block" {
   type = map(any)
   default = {
-    training = "10.1.0.0/16"
-    staging  = "10.2.0.0/16"
-    ops      = "10.3.0.0/16"
+    production = "10.1.0.0/16"
+    staging    = "10.2.0.0/16"
+    ops        = "10.3.0.0/16"
   }
 }
 
