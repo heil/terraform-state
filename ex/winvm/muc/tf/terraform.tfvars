@@ -1,0 +1,5 @@
+aws_region = "eu-central-1"
+aws_profile = "terraform-training"
+file_pubkey = "~/.ssh/id_rsa.aws.pub"
+instance_username = "administrator"
+instance_password = "Terraform-Test01"

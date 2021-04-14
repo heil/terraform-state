@@ -1,0 +1,10 @@
+[win]
+win-ttvk.terraform-training.de
+
+[win:vars]
+ansible_connection=winrm
+ansible_ssh_pass=Terraform-Test01
+ansible_ssh_port=5985
+ansible_ssh_user=administratore
+ansible_winrm_server_cert_validation=ignore
+ansible_winrm_transport=ntlm

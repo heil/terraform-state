@@ -1,0 +1,13 @@
+---
+- hosts: win
+  gather_facts: False
+
+#  tasks:
+#  - name: Wait port 5985 to become open"
+#    wait_for_connection:
+#      timeout: 300
+
+- hosts: win
+  gather_facts: false
+  roles:
+     - windows
