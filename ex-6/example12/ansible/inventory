@@ -1,0 +1,10 @@
+[win]
+18.193.114.149
+
+[win:vars]
+ansible_connection=winrm
+ansible_ssh_pass=Toh~nos2shad
+ansible_ssh_port=5985
+ansible_ssh_user=Terraform
+ansible_winrm_server_cert_validation=ignore
+ansible_winrm_transport=ntlm

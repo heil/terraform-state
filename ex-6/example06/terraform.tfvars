@@ -1,0 +1,5 @@
+aws_profile = "terraform-training"
+aws_region  = "eu-central-1"
+public_key_path  = "~/.ssh/id_rsa.pub"
+INSTANCE_USERNAME = "fwadmin"
+INSTANCE_PASSWORD = "Test1234"

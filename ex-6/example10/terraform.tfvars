@@ -1,0 +1,1 @@
+ssh_key_name = "kurs-06-jf"
