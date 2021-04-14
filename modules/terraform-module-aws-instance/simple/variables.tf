@@ -1,6 +1,6 @@
 variable "ami" {
   description = "The AMI to use for the instance."
-  type        = "string"
+  type        = string
 }
 
 variable "associate_public_ip_address" {
@@ -10,7 +10,7 @@ variable "associate_public_ip_address" {
 
 variable "domain_name" {
   description = "The DNS domain name of the instance."
-  type        = "string"
+  type        = string
 }
 
 variable "enabled" {
@@ -21,17 +21,17 @@ variable "enabled" {
 
 variable "hostname" {
   description = "The DNS short name of the instance without the domain part."
-  type        = "string"
+  type        = string
 }
 
 variable "instance_type" {
   description = "The type of instance to start."
-  type        = "string"
+  type        = string
 }
 
 variable "private_ip" {
   description = "The private IP address to associate with the instance in a VPC."
-  type        = "string"
+  type        = string
 }
 
 variable "source_dest_check" {
@@ -41,16 +41,16 @@ variable "source_dest_check" {
 
 variable "subnet_id" {
   description = "The VPC Subnet ID to launch in."
-  type        = "string"
+  type        = string
 }
 
 variable "tags" {
   description = "Dictionary of tags that will be added to all resources created by the module."
   default     = {}
-  type        = "map"
+  type        = map(string)
 }
 
 variable "vpc_security_group_ids" {
   description = "A list of security group IDs to associate with."
-  type        = "list"
+  type        = list(string)
 }

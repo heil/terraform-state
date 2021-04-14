@@ -1,5 +1,5 @@
 data "template_file" "init_mod" {
-  template = file("${path.module}/../templates/cloud-init.tpl")
+  template = file("${path.module}/../templates/cloud-linux.tpl")
 
   vars = {
     domain_name = var.domain_name
@@ -17,17 +17,6 @@ data "template_cloudinit_config" "mod" {
   }
 }
 
-
-data "template_file" "init_windows_mod" {
-  template = file("${path.module}/../templates/cloud-init_windows.tpl")
-
-  vars = {
-    username = var.domain_name
-    password    = var.hostname
-  }
-}
-
-
 resource "aws_instance" "mod" {
   ami                         = var.ami
   associate_public_ip_address = var.associate_public_ip_address
@@ -40,6 +29,6 @@ resource "aws_instance" "mod" {
   vpc_security_group_ids      = var.vpc_security_group_ids
 
   lifecycle {
-    ignore_changes = ["user_data", "ami"]
+    ignore_changes = [user_data, ami]
   }
 }
